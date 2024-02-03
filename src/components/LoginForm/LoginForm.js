@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-// import { useState } from 'react';
 
 import { Formik } from 'formik';
 import toast from 'react-hot-toast';
@@ -44,7 +43,6 @@ export const LoginForm = () => {
             type="email"
             id="email"
             name="email"
-            // placeholder="jane@mail.com"
             required
           />
           <LogError name="email" component="span" />
@@ -56,7 +54,6 @@ export const LoginForm = () => {
             type="password"
             id="password"
             name="password"
-            // placeholder="qwErty1"
             required
           />
           <LogError name="password" component="span" />

@@ -1,6 +1,6 @@
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { fetchContacts } from '../redux/contacts/operations';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from '../redux/contacts/operations';
 
 import { BsCardList } from 'react-icons/bs';
 import { BsBook } from 'react-icons/bs';
@@ -12,11 +12,11 @@ import { SearchBar } from '../components/SearchBar/SearchBar';
 import { ContactList } from '../components/ContactList/ContactList';
 
 export default function Contacts() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <MainSection>

@@ -72,7 +72,6 @@ export const RegisterForm = () => {
             type="text"
             id="name"
             name="name"
-            placeholder="Jane Doe"
             required
           />
           <RegError name="name" component="span" />
@@ -84,7 +83,6 @@ export const RegisterForm = () => {
             type="email"
             id="email"
             name="email"
-            placeholder="jane@mail.com"
             required
           />
           <RegError name="email" component="span" />
@@ -96,7 +94,6 @@ export const RegisterForm = () => {
             type="password"
             id="password"
             name="password"
-            placeholder="qwErty1"
             required
           />
           <RegError name="password" component="span" />

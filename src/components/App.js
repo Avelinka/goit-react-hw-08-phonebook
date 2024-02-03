@@ -1,39 +1,3 @@
-// import { GlobalStyle } from './GlobalStyle';
-// import { Toaster } from 'react-hot-toast';
-
-// import { BsCardList } from 'react-icons/bs';
-// import { BsBook } from 'react-icons/bs';
-
-// import { MainSection, Wrapper } from './Helper/Layout';
-// import { HeaderWrap, MainHeader, Header } from './Helper/Headers';
-// import { ContactForm } from './ContactForm/ContactForm';
-// import { SearchBar } from './SearchBar/SearchBar';
-// import { ContactList } from './ContactList/ContactList';
-
-// export const App = () => {
-//   return (
-//     <MainSection>
-//       <Wrapper>
-//         <TitleWrap>
-//           <BsBook size="40" />
-//           <MainTitle>Phonebook</MainTitle>
-//         </TitleWrap>
-//         <ContactForm />
-
-//         <TitleWrap>
-//           <BsCardList size="28" />
-//           <Title>Contacts</Title>
-//         </TitleWrap>
-//         <SearchBar />
-//         <ContactList />
-//       </Wrapper>
-
-//       <GlobalStyle />
-//       <Toaster />
-//     </MainSection>
-//   );
-// };
-
 import { lazy, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';

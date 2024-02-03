@@ -60,7 +60,7 @@
 // };
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 import {
   selectContacts,
@@ -68,7 +68,7 @@ import {
   selectIsLoading,
   selectFilter,
 } from '../../redux/contacts/selectors';
-import { fetchContacts, deleteContact } from '../../redux/contacts/operations';
+import { deleteContact } from '../../redux/contacts/operations';
 
 import { Loader } from '../Loader/Loader';
 
@@ -90,9 +90,9 @@ export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   const isExistContacts = () => {
     if (!filteredContacts || filteredContacts === '') {
