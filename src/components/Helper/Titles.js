@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderWrap = styled.div`
+export const TitleWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,12 +8,12 @@ export const HeaderWrap = styled.div`
   margin-bottom: ${p => p.theme.spacing(5)};
 `;
 
-export const MainHeader = styled.h1`
+export const MainTitle = styled.h1`
   font-size: 40px;
   font-weight: 700;
 `;
 
-export const Header = styled.h2`
+export const Title = styled.h2`
   font-size: 28px;
   font-weight: 500;
 `;

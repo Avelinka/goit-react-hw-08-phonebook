@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
+import { addContact } from '../../redux/contacts/operations';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -28,10 +28,11 @@ const сontactSchema = Yup.object().shape({
       'Name may contain only letters, apostrophe, dot, dash and spaces. For example Jane Dou'
     )
     .required('Required'),
-  phone: Yup.string()
+  number: Yup.string()
     .trim()
+    .min(7, 'Too Short!')
     .matches(
-      /^[0-9]{3}-[0-9]{2}-[0-9]{2}$/,
+      /^[0-9+ ()-]+$/,
       'Please enter a valid phone number. For example 111-11-11'
     )
     .required('Required'),
@@ -47,7 +48,7 @@ export const ContactForm = () => {
     );
 
     const isExistPhone = contacts.some(
-      ({ phone }) => phone === newContact.phone
+      ({ number }) => number === newContact.number
     );
 
     if (isExistName) {
@@ -55,7 +56,7 @@ export const ContactForm = () => {
     }
 
     if (isExistPhone) {
-      return toast.error(`${newContact.phone}: is already in contacts`);
+      return toast.error(`${newContact.number}: is already in contacts`);
     }
 
     dispatch(addContact(newContact));
@@ -66,7 +67,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={сontactSchema}
       onSubmit={onAddContact}
@@ -87,7 +88,7 @@ export const ContactForm = () => {
           />
           <ErrorMessage name="name" component="span" />
         </Label>
-        <Label htmlFor="phone">
+        <Label htmlFor="number">
           <LabelWrap>
             <BsTelephoneFill size="16" />
             Phone
@@ -95,12 +96,12 @@ export const ContactForm = () => {
           <Field
             autoComplete="off"
             type="tel"
-            id="phone"
-            name="phone"
+            id="number"
+            name="number"
             placeholder="111-11-11"
             required
           />
-          <ErrorMessage name="phone" component="span" />
+          <ErrorMessage name="number" component="span" />
         </Label>
         <AddBtn type="submit">
           Add contact
