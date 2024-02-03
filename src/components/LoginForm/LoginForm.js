@@ -39,7 +39,7 @@ export const LoginForm = () => {
         <LogLabel htmlFor="email">
           Email
           <LogField
-            // autoComplete="off"
+            autoComplete="on"
             type="email"
             id="email"
             name="email"
@@ -49,13 +49,7 @@ export const LoginForm = () => {
         </LogLabel>
         <LogLabel htmlFor="password">
           Password
-          <LogField
-            // autoComplete="off"
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
+          <LogField type="password" id="password" name="password" required />
           <LogError name="password" component="span" />
         </LogLabel>
         <LogBtn type="submit">Log In</LogBtn>

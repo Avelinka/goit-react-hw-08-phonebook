@@ -10,7 +10,7 @@ export const SearchBar = () => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
-  const changeFilter = evt => {
+  const onChangeFilter = evt => {
     dispatch(setFilter(evt.target.value.toLowerCase().trim()));
   };
 
@@ -24,7 +24,7 @@ export const SearchBar = () => {
         autoComplete="off"
         type="text"
         value={filter}
-        onChange={changeFilter}
+        onChange={onChangeFilter}
         placeholder="search"
       />
     </SearchLabel>

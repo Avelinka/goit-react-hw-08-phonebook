@@ -1,5 +1,5 @@
 import storage from 'redux-persist/lib/storage';
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -20,19 +20,20 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+export const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
+  contacts: contactsReducer,
+  filter: filterReducer,
+});
+
 export const store = configureStore({
-  reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
-    contacts: contactsReducer,
-    filters: filterReducer,
-  },
+  reducer: rootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);

@@ -68,7 +68,7 @@ export const RegisterForm = () => {
         <RegLabel htmlFor="name">
           Username
           <RegField
-            autoComplete="off"
+            autoComplete="on"
             type="text"
             id="name"
             name="name"
@@ -79,7 +79,7 @@ export const RegisterForm = () => {
         <RegLabel htmlFor="email">
           Email
           <RegField
-            autoComplete="off"
+            autoComplete="on"
             type="email"
             id="email"
             name="email"
@@ -89,13 +89,7 @@ export const RegisterForm = () => {
         </RegLabel>
         <RegLabel htmlFor="password">
           Password
-          <RegField
-            autoComplete="off"
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
+          <RegField type="password" id="password" name="password" required />
           <RegError name="password" component="span" />
         </RegLabel>
         <RegBtn type="submit">Register</RegBtn>
